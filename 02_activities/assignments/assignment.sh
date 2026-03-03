@@ -57,7 +57,6 @@ cp user*.log ../processed/user_logs
 cp event*.log ../processed/event_logs
 
 # 7. For user privacy, remove all files containing IP addresses (files with "ipaddr" in the filename) from ./data/raw and ./data/processed/user_logs
-<<<<<<< HEAD
 rm *ipaddr*
 cd ../processed/user_logs
 rm *ipaddr*
