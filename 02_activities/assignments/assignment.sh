@@ -29,39 +29,38 @@ unzip -q rawdata.zip
 # Complete assignment here
 
 # 1. Create a directory named data
-mkdir newproject/data
+mkdir data
 
 # 2. Move the ./rawdata directory to ./data/raw (eg. move it into ./data and rename it to raw)
-mv newproject/rawdata newproject/data/raw
+mv rawdata data/raw
 
 # 3. List the contents of the ./data/raw directory
-ls newproject/data/raw
+ls data/raw
 
 # 4. Create the directory ./data/processed, 
-mkdir newproject/data/processed
+mkdir data/processed
 
 #    then create the following sub-directories within it: server_logs, user_logs, and event_logs
-mkdir newproject/data/processed/server_logs
-mkdir newproject/data/processed/user_logs
-mkdir newproject/data/processed/event_logs
+mkdir data/processed/server_logs
+mkdir data/processed/user_logs
+mkdir data/processed/event_logs
 
 # 5. Copy all server log files (files with "server" in the name AND a .log extension) from ./data/raw to ./data/processed/server_logs
-cp newproject/data/raw/server*.log newproject/data/processed/server_logs/
-
+cp data/raw/server*.log data/processed/server_logs 
 
 # 6. Repeat the above step for user logs and event logs
-cp newproject/data/raw/user*.log newproject/data/processed/user_logs/
-cp newproject/data/raw/event*.log newproject/data/processed/event_logs/
+cp data/raw/user*.log data/processed/user_logs
+cp data/raw/event*.log data/processed/event_logs
 
 # 7. For user privacy, remove all files containing IP addresses (files with "ipaddr" in the filename) from ./data/raw and ./data/processed/user_logs
-rm newproject/data/raw/*ipaddr*
-rm newproject/data/processed/user_logs/*ipaddr*
+rm data/raw/*ipaddr*
+rm data/processed/user_logs/*ipaddr*
 
 # 8. Create a file named ./data/inventory.txt that lists all the files in the subfolders of ./data/processed
-touch newproject/data/inventory.txt
-ls newproject/data/processed/server_logs >> newproject/data/inventory.txt
-ls newproject/data/processed/user_logs >> newproject/data/inventory.txt
-ls newproject/data/processed/event_logs >> newproject/data/inventory.txt
+touch data/inventory.txt
+ls data/processed/server_logs >> inventory.txt
+ls data/processed/user_logs >> inventory.txt
+ls data/processed/event_logs >> inventory.txt
 
 
 ###########################################
