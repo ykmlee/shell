@@ -29,42 +29,39 @@ unzip -q rawdata.zip
 # Complete assignment here
 
 # 1. Create a directory named data
-mkdir data
+mkdir newproject/data
 
 # 2. Move the ./rawdata directory to ./data/raw (eg. move it into ./data and rename it to raw)
-mv rawdata data/raw
+mv newproject/rawdata newproject/data/raw
 
 # 3. List the contents of the ./data/raw directory
-ls data/raw
+ls newproject/data/raw
 
 # 4. Create the directory ./data/processed, 
-cd data
-mkdir processed
+mkdir newproject/data/processed
 
 #    then create the following sub-directories within it: server_logs, user_logs, and event_logs
-cd processed
-mkdir server_logs
-mkdir user_logs
-mkdir event_logs
+mkdir newproject/data/processed/server_logs
+mkdir newproject/data/processed/user_logs
+mkdir newproject/data/processed/event_logs
 
 # 5. Copy all server log files (files with "server" in the name AND a .log extension) from ./data/raw to ./data/processed/server_logs
-cd ..
-cd raw
-cp server*.log ../processed/server_logs
+cp newproject/data/raw/server*.log newproject/data/processed/server_logs/
+
 
 # 6. Repeat the above step for user logs and event logs
-cp user*.log ../processed/user_logs
-cp event*.log ../processed/event_logs
+cp newproject/data/raw/user*.log newproject/data/processed/user_logs/
+cp newproject/data/raw/event*.log newproject/data/processed/event_logs/
 
 # 7. For user privacy, remove all files containing IP addresses (files with "ipaddr" in the filename) from ./data/raw and ./data/processed/user_logs
-rm ../raw/*ipaddr*
-rm user_logs/*ipaddr*
+rm newproject/data/raw/*ipaddr*
+rm newproject/data/processed/user_logs/*ipaddr*
 
 # 8. Create a file named ./data/inventory.txt that lists all the files in the subfolders of ./data/processed
-touch ../inventory.txt
-ls server_logs >> inventory.txt
-ls user_logs >> inventory.txt
-ls event_logs >> inventory.txt
+touch newproject/data/inventory.txt
+ls newproject/data/processed/server_logs >> newproject/data/inventory.txt
+ls newproject/data/processed/user_logs >> newproject/data/inventory.txt
+ls newproject/data/processed/event_logs >> newproject/data/inventory.txt
 
 
 ###########################################
